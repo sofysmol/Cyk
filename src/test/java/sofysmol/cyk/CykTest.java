@@ -81,7 +81,7 @@ public class CykTest {
     private boolean getResult(String filename) throws IOException, BadInputException{
         App.Input input = mapper.readValue(Files.readAllBytes(Paths.get(filename)), App.Input.class);
         Grammar grammar = GrammarMapper.parse(input.getNterms(),
-                input.getTerms(), input.getStarts(), input.getProducts());
+                input.getTerms(), input.getStarts(), input.getProductions());
         return new CykAlgorithm().check(grammar, input.getWord());
     }
 }

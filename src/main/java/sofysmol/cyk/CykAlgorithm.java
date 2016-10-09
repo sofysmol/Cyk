@@ -26,11 +26,11 @@ public class CykAlgorithm {
                 List<Symbol> res = new ArrayList<>();
                 res.add((Symbol)(new Terminal(word.charAt(i))));
                 Product pr = new Product(grammar.getNterms().get(j), res);
-                if(grammar.getProducts().contains(pr))
+                if(grammar.getProductions().contains(pr))
                     d[0][i][j] = true;
             }
         }
-        List<Product> products = grammar.getProductsWithNTerm();
+        List<Product> products = grammar.getProductionsWithNTerm();
         for(int i = 2; i<=n; i++) {
             for(int j = 1; j<=n-i+1; j++)
                 for(int k = 1; k<=i-1; k++)

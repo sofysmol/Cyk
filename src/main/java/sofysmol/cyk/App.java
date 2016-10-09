@@ -27,7 +27,7 @@ public class App {
             ObjectMapper mapper = new ObjectMapper();
             Input input = mapper.readValue(Files.readAllBytes(Paths.get(argv[0])), Input.class);
             Grammar grammar = GrammarMapper.parse(input.getNterms(),
-                    input.getTerms(), input.getStarts(), input.getProducts());
+                    input.getTerms(), input.getStarts(), input.getProductions());
             CykAlgorithm alg = new CykAlgorithm();
             if(alg.check(grammar,input.getWord()))
                 System.out.println("String is member of language");
@@ -70,19 +70,19 @@ public class App {
     public static class Input{
         private String[] nterms;
         private String[] terms;
-        private String[] products;
+        private String[] productions;
         private String[] starts;
         private String word;
 
         @JsonCreator
         public Input(@JsonProperty("nterms") String[] nterms,
                      @JsonProperty("terms")String[] terms,
-                     @JsonProperty("products")String[] products,
+                     @JsonProperty("productions")String[] productions,
                      @JsonProperty("starts")String[] starts,
                      @JsonProperty("word") String word) {
             this.nterms = nterms;
             this.terms = terms;
-            this.products = products;
+            this.productions = productions;
             this.starts = starts;
             this.word = word;
         }
@@ -103,12 +103,12 @@ public class App {
             this.terms = terms;
         }
 
-        public String[] getProducts() {
-            return products;
+        public String[] getProductions() {
+            return productions;
         }
 
-        public void setProducts(String[] products) {
-            this.products = products;
+        public void setProductions(String[] productions) {
+            this.productions = productions;
         }
 
         public String[] getStarts() {

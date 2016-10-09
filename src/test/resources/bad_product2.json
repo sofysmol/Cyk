@@ -2,6 +2,6 @@
   "nterms":["A","B","S1", "S2"],
   "starts":["S1","s2"],
   "terms":["a","b"],
-  "products":["S1->A++B","S2->S1+A","A->a","B->b"],
+  "productions":["S1->A++B","S2->S1+A","A->a","B->b"],
   "word":"aba"
 }

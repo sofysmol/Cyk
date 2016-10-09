@@ -10,18 +10,18 @@ import java.util.List;
 public class Grammar {
     private List<NTerminal> nterms;
     private List<Terminal> terms;
-    private List<Product> products;
+    private List<Product> productions;
     private List<NTerminal> starts;
 
-    public Grammar( List<NTerminal> nterms, List<Terminal> terms, List<Product> products, List<NTerminal> starts){
+    public Grammar( List<NTerminal> nterms, List<Terminal> terms, List<Product> productions, List<NTerminal> starts){
         this.nterms = nterms;
         this.terms = terms;
-        this.products = products;
+        this.productions = productions;
         this.starts = starts;
     }
-    public List<Product> getProductsWithNTerm() {
+    public List<Product> getProductionsWithNTerm() {
         List<Product> result = new ArrayList<>();
-        for(Product p : products)
+        for(Product p : productions)
             if(p.containsNTerm())
                 result.add(p);
         return result;
@@ -39,7 +39,7 @@ public class Grammar {
         return terms;
     }
 
-    public List<Product> getProducts() {
-        return products;
+    public List<Product> getProductions() {
+        return productions;
     }
 }
