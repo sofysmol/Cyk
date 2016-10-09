@@ -10,16 +10,23 @@ import java.util.List;
  */
 public class CykAlgorithm {
 
-    public static boolean check(Grammar grammar, String word){
+    private boolean[][][] d;
+
+    public boolean[][][] getTable()
+    {
+        return d;
+    }
+
+    public boolean check(Grammar grammar, String word){
         int n = word.length();
         int r = grammar.getNterms().size();
-        boolean[][][] d = new boolean[n][n][r];
+        d = new boolean[n][n][r];
         for(int i = 0; i<n; i++){
             for(int j = 0 ; j<r; j++){
                 List<Symbol> res = new ArrayList<>();
                 res.add((Symbol)(new Terminal(word.charAt(i))));
                 Product pr = new Product(grammar.getNterms().get(j), res);
-                if(grammar.getProducts().contains(pr))//containsProduct(pr))
+                if(grammar.getProducts().contains(pr))
                     d[0][i][j] = true;
             }
         }

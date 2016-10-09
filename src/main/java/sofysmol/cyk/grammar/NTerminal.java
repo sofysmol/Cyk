@@ -17,6 +17,10 @@ public class NTerminal implements Symbol {
         this.name = String.valueOf(ch);
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public int hashCode() {
         return name != null ? name.hashCode() : 0;
