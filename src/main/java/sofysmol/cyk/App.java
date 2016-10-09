@@ -30,8 +30,8 @@ public class App {
                     input.getTerms(), input.getStarts(), input.getProductions());
             CykAlgorithm alg = new CykAlgorithm();
             if(alg.check(grammar,input.getWord()))
-                System.out.println("String is member of language");
-            else System.out.println("String is not member of language");
+                System.out.println("\""+input.getWord()+"\" is a member of the language");
+            else System.out.println("\"" + input.getWord() + "\" is not a member of the language");
             printTable(alg.getTable(), grammar.getNterms(), input.getWord());
 
         }

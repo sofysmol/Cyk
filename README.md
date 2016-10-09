@@ -33,7 +33,7 @@ Example input file:
  The result of the algorithm
     
 ```
-String is member of language
+"aaccy" is a member of the language
 ┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
 │ S S1         │              │              │              │              │
 ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
@@ -56,7 +56,7 @@ String is member of language
 $ sudo apt-get install maven
 ```
 
- - Change directory on "CYK"
+ - Change directory on "Cyk"
  - Install project
 ```sh
 $ mvn install
